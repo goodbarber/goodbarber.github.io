@@ -1,0 +1,15 @@
+{
+    "androidengine_gbrecyclerindicator": [
+        "android"
+    ],
+    "appsdk_request_example": [
+        "goodbarber-appsdk"
+    ],
+    "contentapi_custom_feeds_example": [],
+    "gbjstk": [],
+    "plugin_demo": [
+        "goodbarber-plugin"
+    ],
+    "plugin_simpleweather": [],
+    "shop_custom_dev_examples": []
+}

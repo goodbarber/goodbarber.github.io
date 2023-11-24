@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="GoodBarber for Developers"/>
+
+		<link href="/assets/base.css" media="screen" rel="stylesheet" type="text/css" />
+		<link rel="shortcut icon" href="/images/logo.jpg" />
+		<title>GoodBarber for Developers</title>
+	</head>
+	<body>
+		<div class="profile">
+			<section class="profile-masthead" id="masthead">
+				<div class="wrapper">
+					<header class="profile-logo">
+						<div class="profile-logo-image">
+							<img alt="white-horizontal-gb" src="/images/white-horizontal-goodbarber.png" />
+							<span class="logo-text">for Developers</span>
+						</div>
+						<div class="github-link">
+							<a href="https://github.com/goodbarber">https://github.com/goodbarber</a>
+						</div>
+					</header>
+					<div class="profile-description">
+						<h1>Unlock <span class="profile-title-gradient">Open Source Magic</span></h1>
+						<p>
+							Building GoodBarber would not have been possible without Open Source Software. We wanted to do our bit to give back to the community
+							and here's some of that software. We hope you'll find it useful. For a full list, see our Github.
+						</p>
+						<p>
+							Want to make contributions? We'd love to see them! All we ask is that you adhere to our FOSS Community Code of Conduct to help us
+							build a fair, inclusive and welcoming environment.
+						</p>
+						<nav class="repo-navigation">
+							<ul class="repo-navigation-list">
+								{{#categories}}
+								<li class="repo-navigation-list-item">
+									<a href="#{{ index }}">{{ name }}</a>
+								</li>
+								{{/categories}}
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</section>
+
+			<section class="profile-content" id="content">
+				<!-- TODO header? -->
+				<div class="wrapper">
+					<article class="profile-repo" id="repo">
+						{{#categories}}
+						<div id="{{ index }}" class="repo-category">
+							<h1 class="repo-category-name">{{ name }}</h1>
+							{{#has_repos_with_images}}
+							<ol class="repo-category-list has-images">
+								{{#repos_with_images}}
+								<li class="repo-item">
+									<div class="repo-item-info{{^description}} has-no-meta-content{{/description}}">
+										<div class="repo-item-image{{#description}} has-meta-content{{/description}}">
+											<img src="/repo_images/{{ name }}.jpg" alt="{{ name }}_img" />
+										</div>
+										<div class="repo-item-content">
+											<span class="repo-item-links">
+												{{#website}}<a href="{{ href }}" target="_blank">See on Github &sdot;</a> 
+												{{/website}}<a href="{{ website }}" target="_blank"> Try demo</a>
+											</span>
+											<h2 class="repo-item-name">{{ name }}</h2>
+											{{#description}}
+											<p class="repo-item-description">{{ description }}</p>
+											{{/description}}
+										</div>
+									</div>
+								</li>
+								{{/repos_with_images}}
+							</ol>
+							{{/has_repos_with_images}}
+							{{#has_repos_without_images}}
+							<ol class="repo-category-list">
+								{{#repos_without_images}}
+								<li class="repo-item">
+									<div class="repo-item-info{{^description}} has-no-meta-content{{/description}}">
+										<span class="repo-item-links">
+											{{#website}}<a href="{{ href }}" target="_blank">See on Github &sdot;</a>
+											{{/website}}<a href="{{ website }}" target="_blank"> Website</a>
+										</span>
+										<h2 class="repo-item-name">{{ name }}</h2>
+										{{#description}}
+										<p class="repo-item-description">{{ description }}</p>
+										{{/description}}
+									</div>
+								</li>
+								{{/repos_without_images}}
+							</ol>
+							{{/has_repos_without_images}}
+						</div>
+						{{/categories}}
+					</article>
+				</div>
+			</section>
+		</div>
+
+		<footer class="footer">
+			<nav class="footer-navigation">
+				<div class="footer-container-list">
+					<ul class="footer-navigation-list">
+						<li class="footer-navigation-item">COMPANY</li>
+						<li class="footer-navigation-item"><a href="https://fr.goodbarber.com/about/" target="_blank">About us</a></li>
+						<li class="footer-navigation-item"><a href="https://careers.goodbarber.com/" target="_blank">Jobs</a></li>
+						<li class="footer-navigation-item"><a href="https://fr.goodbarber.com/contact/" target="_blank">Contact us</a></li>
+					</ul>
+					<ul class="footer-navigation-list">
+						<li class="footer-navigation-item">PRODUCT</li>
+						<li class="footer-navigation-item"><a href="https://fr.goodbarber.com/extensions/" target="_blank">Top Extensions</a></li>
+						<li class="footer-navigation-item"><a href="https://fr.goodbarber.com/developers/" target="_blank">Developers</a></li>
+					</ul>
+					<ul class="footer-navigation-list">
+						<li class="footer-navigation-item">SOCIAL</li>
+						<li class="footer-navigation-item">
+							<a href="https://www.facebook.com/goodbarber/" target="_blank"><img src="/images/fb.svg" alt="logo_facebook">Facebook</a>
+						</li>
+						<li class="footer-navigation-item">
+							<a href="https://www.instagram.com/goodbarber/" target="_blank"><img src="/images/instagram.svg" alt="logo_instagram">Instagram</a>
+						</li>
+						<li class="footer-navigation-item">
+							<a href="https://twitter.com/goodbarber/" target="_blank"><img src="/images/twitter.svg" alt="logo_twitter">Twitter</a>
+						</li>
+						<li class="footer-navigation-item">
+							<a href="https://www.youtube.com/goodbarber/" target="_blank"><img src="/images/youtube.svg" alt="logo_youtube">Youtube</a>
+						</li>
+						<li class="footer-navigation-item">
+							<a href="https://www.linkedin.com/company/goodbarber/" target="_blank"><img src="/images/pinterest.png" alt="logo_pinterest">Pinterest</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class="container-copyright">
+				<p class="copyright">© 2023 GoodBarber</p>
+			</div>
+		</footer>
+	</body>
+</html>
