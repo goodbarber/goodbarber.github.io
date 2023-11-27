@@ -374,6 +374,10 @@ body {
 		font-size: 2rem;
 	}
 
+	.profile-description {
+		margin-top: 58px;
+	}
+
 	.profile-masthead {
 		padding-top: 30px;
 	}
@@ -450,6 +454,10 @@ body {
 
 	.profile-description h1 {
 		font-size: 2rem;
+	}
+
+	.profile-description {
+		margin-top: 58px;
 	}
 
 	.profile-masthead {
@@ -529,6 +537,10 @@ body {
 
 	.profile-description h1 {
 		font-size: 2rem;
+	}
+
+	.profile-description {
+		margin-top: 58px;
 	}
 
 	.profile-masthead {
