@@ -366,7 +366,7 @@ body {
 
 /* xsmall */
 @media only screen and (max-width: 35.4em) {
-	.wrapper {
+	.wrapper, .footer-navigation{
 		max-width: 345px;
 		margin: 0 auto;
 		padding: 0 22px;
@@ -450,7 +450,7 @@ body {
 
 /* small */
 @media screen and (min-width: 35.5em) and (max-width: 41.75em) {
-	.wrapper {
+	.wrapper, .footer-navigation {
 		max-width: 569px;
 		margin: 0 auto;
 		padding: 0 22px;
@@ -546,7 +546,7 @@ body {
 
 /* medium */
 @media screen and (min-width: 41.76em) and (max-width: 52.687em) {
-	.wrapper {
+	.wrapper, .footer-navigation {
 		max-width: 669px;
 		margin: 0 auto;
 		padding: 0 22px;
@@ -617,7 +617,7 @@ body {
 
 /* large */
 @media screen and (min-width: 52.688em) and (max-width: 63.9375em) {
-	.wrapper {
+	.wrapper, .footer-navigation {
 		max-width: 844px;
 		margin: 0 auto;
 		padding: 0 22px;
@@ -676,7 +676,7 @@ body {
 }
 
 @media screen and (min-width: 64em) and (max-width: 82.375em),  screen and (min-width: 64em) and (max-height: 68.6875em) {
-	.wrapper {
+	.wrapper, .footer-navigation {
 		max-width: 994px;
 		margin: 0 auto;
 		padding: 0 22px;
