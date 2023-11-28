@@ -76,8 +76,7 @@ body {
 .profile-masthead {
 	background-color: var(--header-footer-bg-color);
 	color: white;
-	padding: 50px 0;
-	padding-top: 4em;
+	padding: 4em 0 1em 0;
 }
 
 .profile-logo {
@@ -211,8 +210,8 @@ body {
 .repo-category-name {
 	/* margin-bottom: 1.3em; */
 	color: var(--content-card-color-and-cat);
-	font-weight: 500;
-	font-size: 1.75em;
+	font-weight: 700;
+	font-size: 2em;
 }
 
 .repo-category-list {
@@ -272,7 +271,6 @@ body {
 .repo-item-description {
 	font-size: 1em;
 	line-height: 1.5em;
-	text-align: justify;
 	color: var(--content-card-color-and-cat);
 }
 
@@ -383,6 +381,10 @@ body {
 		font-size: 2.2rem;
 	}
 
+	.profile-description p {
+		line-height: 2em;
+	}
+
 	.profile-description {
 		margin-top: 58px;
 	}
@@ -429,6 +431,7 @@ body {
 	.repo-item-image img {
 		width: 1000px;
 	}
+	
 
 	/* Footer */
 	.footer {
