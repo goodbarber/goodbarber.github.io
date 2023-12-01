@@ -5,6 +5,15 @@
     "appsdk_request_example": [
         "goodbarber-appsdk"
     ],
+    "appsdk_storage_example": [
+        "goodbarber-appsdk"
+    ],
+    "appsdk_link_example": [
+        "goodbarber-appsdk"
+    ],
+    "appsdk_user_example": [
+        "goodbarber-appsdk"
+    ],
     "contentapi_custom_feeds_example": [],
     "gbjstk": [],
     "plugin_demo": [

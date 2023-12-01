@@ -363,7 +363,7 @@ body {
 /* Responsive adjustments */
 
 /* xsmall */
-@media only screen and (max-width: 35.4em) {
+@media only screen and (max-width: 35.438em) {
 	.wrapper,
 	.footer-navigation {
 		max-width: 400px;
@@ -698,4 +698,9 @@ body {
 	.profile-description h1 {
 		font-size: 3rem;
 	}
+
+	.logo-text {
+		margin-top: 9px;
+	}
+
 }

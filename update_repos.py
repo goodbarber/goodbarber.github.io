@@ -28,11 +28,15 @@ def gh_repos():
         print("Not logged in.  Please login to GitHub.")
         time.sleep(2.0)  # Take a nap so GitHub doesn't aggressively throttle us.
 
-    repos = ghclient.get_user().get_repos()
-    repos_formatted = {repo.name: repo.topics for repo in repos}
+    try:
+        repos = ghclient.get_user().get_repos()
+        print(repos)
+        repos_formatted = {repo.name: repo.topics for repo in repos}
 
-    with open(repos_out, "w") as f:
-        json.dump(repos_formatted, f, indent=4)
+        with open(repos_out, "w") as f:
+            json.dump(repos_formatted, f, indent=4)
+    except Exception as e:
+        print(f"Error : {e}")
 
 
 gh_repos()
