@@ -15,7 +15,6 @@ def process_repositories(categories, prioritized_list, categories_mapping):
             "repos_without_images": [],
         }
         for repo_name, repo_data in sorted(categories[category_name].items()):
-            print(repo_name)
             name = extract_text_after_dash_first_line(repo_data["readme"])
             repo = {
                 "name": name,
@@ -23,7 +22,7 @@ def process_repositories(categories, prioritized_list, categories_mapping):
                 "website": repo_data.get("homepage", None),
                 "description": repo_data.get("description", None),
             }
-            if os.path.exists(os.path.join("repo_images", "%s.jpg" % name)):
+            if os.path.exists(os.path.join("repo_images", "%s.jpg" % repo_name)):
                 data["repos_with_images"].append(repo)
                 data["has_repos_with_images"] = True
             else:
