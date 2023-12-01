@@ -7,3 +7,4 @@ vendor
 *.iml
 env
 .vscode
+__pycache__/
