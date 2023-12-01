@@ -15,9 +15,10 @@ def process_repositories(categories, prioritized_list, categories_mapping):
             "repos_without_images": [],
         }
         for repo_name, repo_data in sorted(categories[category_name].items()):
-            name = extract_text_after_dash_first_line(repo_data["readme"])
+            title = extract_title_after_dash_first_line(repo_data["readme"])
             repo = {
-                "name": name,
+                "title": title,
+                "real_name": repo_name,
                 "href": repo_data["html_url"],
                 "website": repo_data.get("homepage", None),
                 "description": repo_data.get("description", None),

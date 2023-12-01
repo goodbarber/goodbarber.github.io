@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-from services.api_github import GitHubClient
+from services.api.github import GitHubClient
 from services.utils.file_handler import *
-from services.repo_parser import *
+from services.api.repo_parser import *
 
 
 def main():

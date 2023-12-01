@@ -49,21 +49,21 @@
 					<article class="profile-repo" id="repo">
 						{{#categories}}
 						<div id="{{ index }}" class="repo-category">
-							<h1 class="repo-category-name">{{ name }}</h1>
+							<h1 class="repo-category-title">{{ title }}</h1>
 							<ol class="repo-category-list">
 							{{#has_repos_with_images}}
 								{{#repos_with_images}}
 								<li class="repo-item">
 									<div class="repo-item-info{{^description}} has-no-meta-content{{/description}}">
 										<div class="repo-item-image{{#description}} has-meta-content{{/description}}">
-											<img src="/repo_images/{{ name }}.jpg" alt="{{ name }}_img" />
+											<img src="/repo_images/{{ real_name }}.jpg" alt="{{ real_name }}_img" />
 										</div>
 										<div class="repo-item-content">
 											<span class="repo-item-links">
 												{{#website}}<a href="{{ href }}" target="_blank">See on Github &sdot;</a> 
 												{{/website}}<a href="{{ website }}" target="_blank"> See a demo</a>
 											</span>
-											<h2 class="repo-item-name">{{ name }}</h2>
+											<h2 class="repo-item-title">{{ title }}</h2>
 											{{#description}}
 											<p class="repo-item-description">{{ description }}</p>
 											{{/description}}
@@ -79,7 +79,7 @@
 										<span class="repo-item-links">
 											<a href="{{ href }}" target="_blank">See on Github</a>
 										</span>
-										<h2 class="repo-item-name">{{ name }}</h2>
+										<h2 class="repo-item-title">{{ title }}</h2>
 										{{#description}}
 										<p class="repo-item-description">{{ description }}</p>
 										{{/description}}

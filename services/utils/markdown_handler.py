@@ -15,7 +15,7 @@ def download_image(image_url):
         return None
 
 
-def extract_text_after_dash_first_line(readme_content):
+def extract_title_after_dash_first_line(readme_content):
     if not readme_content:
         return None
     content_str = readme_content.decoded_content.decode(
