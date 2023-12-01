@@ -207,7 +207,7 @@ body {
 	margin: 3.5em 0 3.5em 0;
 }
 
-.repo-category-title {
+.repo-category-name {
 	/* margin-bottom: 1.3em; */
 	color: var(--content-card-color-and-cat);
 	font-weight: 700;
@@ -263,7 +263,7 @@ body {
 	color: var(--main-blue-gb-color);
 }
 
-.repo-item-name {
+.repo-item-title {
 	font-size: 1.375em;
 	color: var(--content-card-color-and-cat);
 }
