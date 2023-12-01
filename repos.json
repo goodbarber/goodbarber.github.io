@@ -2,13 +2,13 @@
     "androidengine_gbrecyclerindicator": [
         "android"
     ],
+    "appsdk_link_example": [
+        "goodbarber-appsdk"
+    ],
     "appsdk_request_example": [
         "goodbarber-appsdk"
     ],
     "appsdk_storage_example": [
-        "goodbarber-appsdk"
-    ],
-    "appsdk_link_example": [
         "goodbarber-appsdk"
     ],
     "appsdk_user_example": [
@@ -16,6 +16,10 @@
     ],
     "contentapi_custom_feeds_example": [],
     "gbjstk": [],
+    "gbjstk_v3": [],
+    "GBRecyclerIndicatorSample": [],
+    "GBUIKit-Android": [],
+    "goodbarber.github.io": [],
     "plugin_demo": [
         "goodbarber-plugin"
     ],

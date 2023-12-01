@@ -20,7 +20,6 @@ bundle exec jekyll serve
 python -m venv env
 source ./env/bin/activate
 pip install -r requirements.txt
-pip install pystache pygithub3
 ```
 
 ### Update repos list:
