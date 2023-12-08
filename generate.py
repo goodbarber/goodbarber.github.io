@@ -7,14 +7,21 @@ from services.api.repo_parser import *
 
 def main():
     client = GitHubClient()
+    
+    # Load template for parsing
     template = load_template("index.mustache")
+
+    # Get all repos informations
     repos_by_categories = client.gh_repos()
+
+    # This is where we define the categories that will be processed
     categories_mapping = {
         "goodbarber-custom-features": "Custom features",
         "goodbarber-api-integrations": "API integrations",
         "goodbarber-internal-librairies": "Internal libraries",
     }
 
+    # Create context for pystach engine
     context = process_repositories(repos_by_categories, categories_mapping)
     renderer = pystache.Renderer()
     html = renderer.render(template, context)

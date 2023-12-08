@@ -47,5 +47,4 @@ def process_repositories(categories, categories_mapping):
             # Add the category data to the context
             context["categories"].append(data)
 
-    # Return the final context containing all categories and their repositories
     return context
