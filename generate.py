@@ -8,15 +8,14 @@ from services.api.repo_parser import *
 def main():
     client = GitHubClient()
     template = load_template("index.mustache")
-    categories = client.gh_repos()
-    prioritized_list = ["goodbarber-appsdk", "goodbarber-plugin", "android"]
+    repos_by_categories = client.gh_repos()
     categories_mapping = {
-        "goodbarber-appsdk": "Custom Features",
-        "goodbarber-plugin": "API integrations",
-        "android": "Internal Libraries",
+        "goodbarber-custom-features": "Custom features",
+        "goodbarber-api-integrations": "API integrations",
+        "goodbarber-internal-librairies": "Internal libraries",
     }
 
-    context = process_repositories(categories, prioritized_list, categories_mapping)
+    context = process_repositories(repos_by_categories, categories_mapping)
     renderer = pystache.Renderer()
     html = renderer.render(template, context)
     save_html("index.html", html)

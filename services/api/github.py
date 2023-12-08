@@ -33,18 +33,19 @@ class GitHubClient:
             for repo in repos:
                 if repo.topics is None or len(repo.topics) == 0:
                     continue
-                if repo.topics[0] not in repos_formatted_by_categories:
-                    repos_formatted_by_categories[repo.topics[0]] = {}
-                repos_formatted_by_categories[repo.topics[0]].update(
-                    {
-                        repo.name: dict(
-                            homepage=repo.homepage,
-                            html_url=repo.html_url,
-                            description=repo.description,
-                            readme=self.ghclient.get_user().get_repo(repo.name).get_readme(),
-                        )
-                    }
-                )
+                for topic in repo.topics:
+                    if topic not in repos_formatted_by_categories:
+                        repos_formatted_by_categories[topic] = {}
+                    repos_formatted_by_categories[topic].update(
+                        {
+                            repo.name: dict(
+                                homepage=repo.homepage,
+                                html_url=repo.html_url,
+                                description=repo.description,
+                                readme=self.ghclient.get_user().get_repo(repo.name).get_readme(),
+                            )
+                        }
+                    )
             return repos_formatted_by_categories
         except Exception as e:
             print(f"Error : {e}")

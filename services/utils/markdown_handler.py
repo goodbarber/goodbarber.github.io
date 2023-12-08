@@ -5,6 +5,7 @@ import requests
 def download_image(image_url):
     try:
         response = requests.get(image_url, stream=True, allow_redirects=True)
+        print(response)
         if response.status_code == 200:
             print("200 OK")
             return response.iter_content(1024)
@@ -18,13 +19,16 @@ def download_image(image_url):
 def extract_title_after_dash_first_line(readme_content):
     if not readme_content:
         return None
-    # Décode le contenu en UTF-8
+    # Decode content in UTF-8
     content_str = readme_content.decoded_content.decode(
         "utf-8"
     )  
-    # Récupère la première ligne
+    # get the first line
     first_line = content_str.split("\n", 1)[0]  
     match = re.search(r"- (.+)", first_line)
+    # Si on a un match, on retourne le titre, sinon on retourne la première ligne 
+    # en nettoyant les espaces et autres caractères spéciaux au debut
+    first_line = re.sub(r"^[^a-zA-Z0-9]+", "", first_line)
     return match.group(1) if match else first_line
 
 

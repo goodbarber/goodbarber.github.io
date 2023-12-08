@@ -1,7 +1,10 @@
-def custom_sort(key, prioritized_list):
-    try:
-        # Prioritize specific names by assigning them a lower index
-        return prioritized_list.index(key)
-    except ValueError:
-        # For other names, use a high index followed by the normal key
-        return len(prioritized_list), key.lower()
+def custom_sort(item):
+    # Define key priority
+    priority_keys = ['goodbarber-custom-features', 'goodbarber-api-integrations', 'goodbarber-internal-librairies']
+
+    if item in priority_keys:
+        # Priority higher 
+        return priority_keys.index(item)
+    else:
+        # Priority lower
+        return len(priority_keys)
