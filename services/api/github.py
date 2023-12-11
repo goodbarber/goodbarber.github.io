@@ -25,38 +25,40 @@ class GitHubClient:
             print(f"Not logged in with error : {e}")
 
     def gh_repos(self):
-        print("Fetching all repos informations...")
         if not self.logged_in:
             # Check if the user is logged in
             print("Not logged in. Please login to GitHub.")
-            time.sleep(2.0)  # Pause to avoid GitHub rate limiting
+            # Pause to avoid GitHub rate limiting
+            time.sleep(2.0)
             return None
 
         # Fetches all repositories information
         try:
+            print("Fetching all repos informations and performing magic on them...")
             repos_formatted_by_categories = {}
             repos = self.ghclient.get_user().get_repos()
-            for repo in repos:
-                # Skip repositories without topics
-                if repo.topics is None or len(repo.topics) == 0:
-                    continue
+            # Filter repos without topics
+            filtered_repos = [repo for repo in repos if repo.topics]
+            # Load READMEs
+            readmes = {
+                repo.name: self.ghclient.get_user().get_repo(repo.name).get_readme()
+                for repo in filtered_repos
+            }
+
+            for repo in filtered_repos:
+                # Organize repositories by topics
                 for topic in repo.topics:
-                    # Organize repositories by topics
+                    repo_info = dict(
+                        homepage=repo.homepage,
+                        html_url=repo.html_url,
+                        description=repo.description,
+                        readme=readmes[repo.name],
+                    )
                     if topic not in repos_formatted_by_categories:
                         repos_formatted_by_categories[topic] = {}
-                    repos_formatted_by_categories[topic].update(
-                        {
-                            repo.name: dict(
-                                homepage=repo.homepage,
-                                html_url=repo.html_url,
-                                description=repo.description,
-                                readme=self.ghclient.get_user()
-                                .get_repo(repo.name)
-                                .get_readme(),
-                            )
-                        }
-                    )
+                    repos_formatted_by_categories[topic][repo.name] = repo_info
             return repos_formatted_by_categories
+
         except Exception as e:
             print(f"Error : {e}")
             return None

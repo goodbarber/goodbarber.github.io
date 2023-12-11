@@ -7,7 +7,7 @@ from services.api.repo_parser import *
 
 def main():
     client = GitHubClient()
-    
+
     # Load template for parsing
     template = load_template("index.mustache")
 
@@ -22,7 +22,9 @@ def main():
     }
 
     # Create context for pystach engine
-    context = process_repositories(repos_by_categories, categories_mapping)
+    context = create_context_for_template_engine(
+        repos_by_categories, categories_mapping
+    )
     renderer = pystache.Renderer()
     html = renderer.render(template, context)
     save_html("index.html", html)
