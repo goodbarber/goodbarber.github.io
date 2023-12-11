@@ -53,7 +53,7 @@ def create_context_for_template_engine(categories, categories_mapping):
                 }
 
                 # Check if an image exists for the repository and categorize accordingly
-                if os.path.exists(os.path.join("repo_images", "%s.jpg" % repo_name)):
+                if os.path.exists(os.path.join("repo_images", "%s.webp" % repo_name)):
                     data["repos_with_images"].append(repo)
                     data["has_repos_with_images"] = True
                 else:
