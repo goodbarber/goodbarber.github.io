@@ -1,28 +1,40 @@
 {
     "androidengine_gbrecyclerindicator": [
-        "android"
+        "android",
+        "goodbarber-internal-librairies"
     ],
-    "appsdk_link_example": [
-        "goodbarber-appsdk"
+    "appapi_demo": [
+        "goodbarber-app-api",
+        "goodbarber-custom-features"
     ],
-    "appsdk_request_example": [
-        "goodbarber-appsdk"
+    "appapi_link_example": [
+        "goodbarber-app-api",
+        "goodbarber-custom-features"
     ],
-    "appsdk_storage_example": [
-        "goodbarber-appsdk"
+    "appapi_request_example": [
+        "goodbarber-app-api",
+        "goodbarber-custom-features"
     ],
-    "appsdk_user_example": [
-        "goodbarber-appsdk"
+    "appapi_storage_example": [
+        "goodbarber-app-api",
+        "goodbarber-custom-features"
     ],
-    "contentapi_custom_feeds_example": [],
+    "appapi_user_example": [
+        "goodbarber-app-api",
+        "goodbarber-custom-features"
+    ],
+    "contentapi_custom_feeds_example": [
+        "goodbarber-api-integrations",
+        "goodbarber-content-api"
+    ],
     "gbjstk": [],
     "gbjstk_v3": [],
     "GBRecyclerIndicatorSample": [],
     "GBUIKit-Android": [],
     "goodbarber.github.io": [],
-    "plugin_demo": [
-        "goodbarber-plugin"
-    ],
     "plugin_simpleweather": [],
-    "shop_custom_dev_examples": []
+    "shop_custom_dev_examples": [
+        "goodbarber-api-integrations",
+        "goodbarber-shop-api"
+    ]
 }
