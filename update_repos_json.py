@@ -26,8 +26,8 @@ def gh_repos():
 
     if not logged_in:
         print("Not logged in.  Please login to GitHub.")
-        time.sleep(2.0)  # Take a nap so GitHub doesn't aggressively throttle us.
-
+        # Take a nap so GitHub doesn't aggressively throttle us.
+        time.sleep(2.0)
     try:
         repos = ghclient.get_user().get_repos()
         print(repos)
