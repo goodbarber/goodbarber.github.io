@@ -21,13 +21,17 @@ def main():
         "goodbarber-internal-librairies": "Internal libraries",
     }
 
-    # Create context for pystach engine
-    context = create_context_for_template_engine(
-        repos_by_categories, categories_mapping
-    )
-    renderer = pystache.Renderer()
-    html = renderer.render(template, context)
-    save_html("index.html", html)
+    try:
+        # Create context for pystach engine
+        context = create_context_for_template_engine(
+            repos_by_categories, categories_mapping
+        )
+        renderer = pystache.Renderer()
+        html = renderer.render(template, context)
+        save_html("index.html", html)
+    except Exception as e:
+        print(f"Error : {e}")
+        return None
 
 
 if __name__ == "__main__":

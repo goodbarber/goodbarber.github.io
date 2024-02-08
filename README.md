@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 ### Update repos list:
 ```bash
-python update_repos.py
+python update_repos_json.py
 ```
 
 ### Generate static file:
